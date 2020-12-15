@@ -89,7 +89,7 @@ void UserManager::signInUser()
     string login = "", password= "";
 
     cout << endl << "Podaj login: ";
-    login = loadLine();
+    login = auxiliatyMethods.loadLine();
 
     for (int i = 0 ; i < users.size(); i++)
     {
@@ -98,7 +98,7 @@ void UserManager::signInUser()
             for (int attempt = 3; attempt > 0; attempt--)
             {
                 cout << "Podaj haslo. Pozostalo prob: " << attempt << ": ";
-                password = loadLine();
+                password = auxiliatyMethods.loadLine();
 
                 if (users[i].getPassword() == password)
                 {
@@ -121,9 +121,19 @@ void UserManager::signInUser()
     system("pause");
     return ;
 }
-string UserManager::loadLine()
+void UserManager::signOutUser ()
 {
-    string in = "";
-    getline(cin, in);
-    return in;
+    loggedInUser.setLogin("");
+    loggedInUser.setPassword("");
+    loggedInUser.setName("");
+    loggedInUser.setSurname("");
+    loggedInUser.setUserId(0);
+
+}
+bool UserManager::isTheUserSignIn()
+{
+    if (loggedInUser.getUserId() > 0)
+        return true;
+    else
+        return false;
 }

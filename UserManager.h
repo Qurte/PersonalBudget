@@ -3,6 +3,7 @@
 
 #include "User.h"
 #include "FileWithUsers.h"
+#include "AuxiliaryMethods.h"
 #include <vector>
 #include <algorithm>
 
@@ -11,6 +12,7 @@ using namespace std;
 class UserManager
 {
     FileWithUsers fileWithUsers;
+    AuxiliaryMethods auxiliatyMethods;
     vector<User> users;
 
     User getDataNewUser();
@@ -18,16 +20,18 @@ class UserManager
     int loadIdNewUser();
     bool doesLoginExist(string login);
     string changeTheFirstLetterToUppercaseAndTheRestToLowercase(string text);
-    string loadLine();
 
 public:
     UserManager (string nameFileWithUsers): fileWithUsers (nameFileWithUsers)
     {
         users = fileWithUsers.loadUsersFromFile();
+        loggedInUser.setUserId(0);
     };
     void userRegistration();
     void writeAllUsers();
     void signInUser();
+    void signOutUser ();
+    bool isTheUserSignIn();
 
 };
 #endif

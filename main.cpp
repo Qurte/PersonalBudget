@@ -5,11 +5,65 @@ using namespace std;
 
 int main()
 {
-    PersonalBudget personalBudget("users.xml");
+ char choice;
+    PersonalBudget personalBudget ("users.xml");
 
-    personalBudget.writeAllUsers();
-    cout << endl;
-    personalBudget.SignInUser();
+    while (true)
+    {
+        if (personalBudget.isTheUserSignIn() == false)
+        {
+            choice = personalBudget.chooseOptionAtMeinMenu();
+
+            switch (choice)
+            {
+            case '1':
+                personalBudget.userRegistration();
+                break;
+            case '2':
+                personalBudget.SignInUser();
+                break;
+            case '9':
+                exit(0);
+                break;
+            default:
+                cout << endl << "Nie ma takiej opcji w menu." << endl << endl;
+                system("pause");
+                break;
+            }
+        }
+        else
+        {
+            choice = personalBudget.chooseOptionAtOperationMenu();
+
+            switch (choice)
+            {
+            case '1':
+               // ksiazkaAdresowa.dodajAdresata();
+                break;
+            case '2':
+               // ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
+                break;
+            case '3':
+              //  ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
+                break;
+            case '4':
+                // ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+                break;
+            case '5':
+                // ksiazkaAdresowa.usunAdresata();
+                break;
+            case '6':
+               // ksiazkaAdresowa.edytujAdresata();
+                break;
+            case '7':
+               // ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+                break;
+            }
+        }
+
+
+
+    }
 
     return 0;
 }
