@@ -32,6 +32,17 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="FileWithUsers.cpp" />
+		<Unit filename="FileWithUsers.h" />
+		<Unit filename="Markup.cpp" />
+		<Unit filename="Markup.h" />
+		<Unit filename="PersonalBudget.cpp" />
+		<Unit filename="PersonalBudget.h" />
+		<Unit filename="TextFile.h" />
+		<Unit filename="User.cpp" />
+		<Unit filename="User.h" />
+		<Unit filename="UserManager.cpp" />
+		<Unit filename="UserManager.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
