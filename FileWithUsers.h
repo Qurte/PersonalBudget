@@ -1,5 +1,5 @@
-#ifndef FileWithUsers_H
-#define FileWithUsers_H
+#ifndef FILEWITHUSERS_H
+#define FILEWITHUSERS_H
 
 #include "TextFile.h"
 #include "Markup.h"

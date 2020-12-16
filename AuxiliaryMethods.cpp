@@ -7,3 +7,29 @@ string AuxiliaryMethods::loadLine()
     getline(cin, in);
     return in;
 }
+char AuxiliaryMethods::loadCharacter()
+{
+    string in = "";
+    char character  = {0};
+
+    while (true)
+    {
+        getline(cin, in);
+
+        if (in.length() == 1)
+        {
+            character = in[0];
+            break;
+        }
+        cout << "To nie jest pojedynczy znak. Wpisz ponownie." << endl;
+    }
+    return character;
+}
+int AuxiliaryMethods::conversionStringToInt(string integer)
+{
+    int number;
+    istringstream iss(integer);
+    iss >> number;
+
+    return number;
+}

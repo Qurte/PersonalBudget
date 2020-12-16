@@ -1,6 +1,7 @@
-#ifndef AuxiliatyMethods_H
-#define AuxiliatyMethods_H
+#ifndef AUXILIATYMETHODS_H
+#define AUXILIATYMETHODS_H
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -9,5 +10,7 @@ class AuxiliaryMethods
 
     public:
     string loadLine();
+    char loadCharacter();
+    int conversionStringToInt(string integer);
 };
 #endif
