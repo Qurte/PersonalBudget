@@ -11,11 +11,16 @@ using namespace std;
 class PersonalBudget
 {
     UserManager userManager;
-    OperationManager operationManager;
+    OperationManager *operationManager;
     AuxiliaryMethods auxiliaryMethods;
     int IdSignInUser;
+    const string NAME_FILE_WITH_INCOME;
+
 public:
-    PersonalBudget (string nameFileWithUsers): userManager(nameFileWithUsers){};
+    PersonalBudget (string nameFileWithUsers, string nameFileWithIncome): userManager(nameFileWithUsers), NAME_FILE_WITH_INCOME(nameFileWithIncome)
+    {
+
+    };
     void userRegistration();
     void writeAllUsers();
     void SignInUser();

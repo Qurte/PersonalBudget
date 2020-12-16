@@ -3,10 +3,10 @@
 
 using namespace std;
 
-int t_main()
+int main()
 {
  char choice;
-    PersonalBudget personalBudget ("users.xml");
+    PersonalBudget personalBudget ("users.xml","income.xml");
 
     while (true)
     {
@@ -67,8 +67,8 @@ int t_main()
 
     return 0;
 }
-int main()
+int t_main()
 {
-    PersonalBudget personalBudget ("users.xml");
+    PersonalBudget personalBudget ("users.xml", "income.xml");
     personalBudget.addIncome();
 }

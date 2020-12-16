@@ -137,3 +137,7 @@ bool UserManager::isTheUserSignIn()
     else
         return false;
 }
+User UserManager::getLoggedInUser()
+{
+    return loggedInUser;
+}

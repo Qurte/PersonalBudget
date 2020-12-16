@@ -11,6 +11,10 @@ void PersonalBudget::writeAllUsers()
 void PersonalBudget::SignInUser()
 {
     userManager.signInUser();
+    if (isTheUserSignIn() == true)
+    {
+        operationManager = new OperationManager (NAME_FILE_WITH_INCOME, userManager.getLoggedInUser());
+    }
 }
 void PersonalBudget::signOutUser ()
 {
@@ -59,5 +63,5 @@ char PersonalBudget::chooseOptionAtOperationMenu()
 }
 void PersonalBudget::addIncome()
 {
-    operationManager.addIncome();
+    operationManager -> addIncome();
 }

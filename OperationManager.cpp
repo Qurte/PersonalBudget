@@ -2,6 +2,7 @@
 
 void OperationManager::addIncome()
 {
+    system("cls");
     char character;
     string date = "";
     string incomeName = "";
@@ -40,6 +41,8 @@ void OperationManager::addIncome()
     cout << "Podaj wartosc przychodu: " << endl;
     incomeValue = auxiliaryMethods.loadLine();
     income.setIncomeValue(auxiliaryMethods.conversionStringToInt(incomeValue));
+
+    fileWithIncome.addIncomeToFile(income);
     incomes.push_back(income);
     cout << "Przychod zostal dodany" << endl;
     Sleep(1500);
