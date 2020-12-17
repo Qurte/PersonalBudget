@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
  char choice;
-    PersonalBudget personalBudget ("users.xml","income.xml");
+    PersonalBudget personalBudget ("users.xml","income.xml", "expense.xml");
 
     while (true)
     {
@@ -41,7 +41,7 @@ int main()
                     personalBudget.addIncome();
                 break;
             case '2':
-               // ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
+                    personalBudget.addExpense();
                 break;
             case '3':
               //  ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
@@ -67,8 +67,4 @@ int main()
 
     return 0;
 }
-int t_main()
-{
-    PersonalBudget personalBudget ("users.xml", "income.xml");
-    personalBudget.addIncome();
-}
+
