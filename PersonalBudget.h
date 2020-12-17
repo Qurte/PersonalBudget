@@ -15,9 +15,10 @@ class PersonalBudget
     AuxiliaryMethods auxiliaryMethods;
     int IdSignInUser;
     const string NAME_FILE_WITH_INCOME;
+    const string NAME_FILE_WITH_EXPENSE;
 
 public:
-    PersonalBudget (string nameFileWithUsers, string nameFileWithIncome): userManager(nameFileWithUsers), NAME_FILE_WITH_INCOME(nameFileWithIncome)
+    PersonalBudget (string nameFileWithUsers, string nameFileWithIncome, string nameFileWithExpense): userManager(nameFileWithUsers), NAME_FILE_WITH_INCOME(nameFileWithIncome), NAME_FILE_WITH_EXPENSE(nameFileWithExpense)
     {
 
     };
@@ -29,5 +30,6 @@ public:
     char chooseOptionAtMeinMenu();
     char chooseOptionAtOperationMenu();
     void addIncome();
+    void addExpense();
 };
 #endif

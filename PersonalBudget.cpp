@@ -13,7 +13,7 @@ void PersonalBudget::SignInUser()
     userManager.signInUser();
     if (isTheUserSignIn() == true)
     {
-        operationManager = new OperationManager (NAME_FILE_WITH_INCOME, userManager.getLoggedInUser());
+        operationManager = new OperationManager (NAME_FILE_WITH_INCOME, NAME_FILE_WITH_EXPENSE, userManager.getLoggedInUser());
     }
 }
 void PersonalBudget::signOutUser ()
@@ -49,8 +49,8 @@ char PersonalBudget::chooseOptionAtOperationMenu()
     cout << "---------------------------" << endl;
     cout << "1. Dodaj przychod" << endl;
     cout << "2. Dodaj wydatek" << endl;
-    cout << "3. Bilans z bie¿¹cego miesi¹ca" << endl;
-    cout << "4. Bilans z porzedniego miesi¹ca" << endl;
+    cout << "3. Bilans z biezacego miesiaca" << endl;
+    cout << "4. Bilans z porzedniego miesiaca" << endl;
     cout << "5. Bilans z wybranego okresu" << endl;
     cout << "---------------------------" << endl;
     cout << "6. Zmien haslo" << endl;
@@ -64,4 +64,8 @@ char PersonalBudget::chooseOptionAtOperationMenu()
 void PersonalBudget::addIncome()
 {
     operationManager -> addIncome();
+}
+void PersonalBudget::addExpense()
+{
+    operationManager -> addExpense();
 }
