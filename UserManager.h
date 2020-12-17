@@ -1,5 +1,5 @@
-#ifndef UserManager_H
-#define UserManager_H
+#ifndef USERMANAGER_H
+#define USERMANAGER_H
 
 #include "User.h"
 #include "FileWithUsers.h"
@@ -32,6 +32,7 @@ public:
     void signInUser();
     void signOutUser ();
     bool isTheUserSignIn();
+    User getLoggedInUser();
 
 };
 #endif

@@ -6,7 +6,7 @@ using namespace std;
 int main()
 {
  char choice;
-    PersonalBudget personalBudget ("users.xml");
+    PersonalBudget personalBudget ("users.xml","income.xml");
 
     while (true)
     {
@@ -38,7 +38,7 @@ int main()
             switch (choice)
             {
             case '1':
-               // ksiazkaAdresowa.dodajAdresata();
+                    personalBudget.addIncome();
                 break;
             case '2':
                // ksiazkaAdresowa.wyszukajAdresatowPoImieniu();
@@ -56,7 +56,7 @@ int main()
                // ksiazkaAdresowa.edytujAdresata();
                 break;
             case '7':
-               // ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
+                    personalBudget.signOutUser();
                 break;
             }
         }
@@ -66,4 +66,9 @@ int main()
     }
 
     return 0;
+}
+int t_main()
+{
+    PersonalBudget personalBudget ("users.xml", "income.xml");
+    personalBudget.addIncome();
 }

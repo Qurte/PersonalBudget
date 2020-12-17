@@ -1,5 +1,5 @@
-#ifndef FileWithUsers_H
-#define FileWithUsers_H
+#ifndef FILEWITHUSERS_H
+#define FILEWITHUSERS_H
 
 #include "TextFile.h"
 #include "Markup.h"
@@ -14,5 +14,6 @@ public:
     FileWithUsers(string nameFileWtihUsers) : TextFile(nameFileWtihUsers) {};
     void addUserToFile (User user);
     vector <User> loadUsersFromFile();
+
 };
 #endif

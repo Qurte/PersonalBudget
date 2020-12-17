@@ -1,20 +1,26 @@
-#ifndef PersonalBudget_H
-#define PersonalBudget_H
+#ifndef PERSONALBUDGET_H
+#define PERSONALBUDGET_H
 
 #include <iostream>
 #include "UserManager.h"
 #include "AuxiliaryMethods.h"
+#include "OperationManager.h"
 
 using namespace std;
 
 class PersonalBudget
 {
     UserManager userManager;
+    OperationManager *operationManager;
     AuxiliaryMethods auxiliaryMethods;
     int IdSignInUser;
-    char loadCharacter();
+    const string NAME_FILE_WITH_INCOME;
+
 public:
-    PersonalBudget (string nameFileWithUsers): userManager(nameFileWithUsers){};
+    PersonalBudget (string nameFileWithUsers, string nameFileWithIncome): userManager(nameFileWithUsers), NAME_FILE_WITH_INCOME(nameFileWithIncome)
+    {
+
+    };
     void userRegistration();
     void writeAllUsers();
     void SignInUser();
@@ -22,5 +28,6 @@ public:
     bool isTheUserSignIn();
     char chooseOptionAtMeinMenu();
     char chooseOptionAtOperationMenu();
+    void addIncome();
 };
 #endif

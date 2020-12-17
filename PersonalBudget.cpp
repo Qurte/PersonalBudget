@@ -11,6 +11,10 @@ void PersonalBudget::writeAllUsers()
 void PersonalBudget::SignInUser()
 {
     userManager.signInUser();
+    if (isTheUserSignIn() == true)
+    {
+        operationManager = new OperationManager (NAME_FILE_WITH_INCOME, userManager.getLoggedInUser());
+    }
 }
 void PersonalBudget::signOutUser ()
 {
@@ -32,7 +36,7 @@ char PersonalBudget::chooseOptionAtMeinMenu()
     cout << "9. Koniec programu" << endl;
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
-    choice = loadCharacter();
+    choice = auxiliaryMethods.loadCharacter();
 
     return choice;
 }
@@ -43,7 +47,7 @@ char PersonalBudget::chooseOptionAtOperationMenu()
     system("cls");
     cout << " >>> MENU OPERACJI <<<" << endl;
     cout << "---------------------------" << endl;
-    cout << "1. Dodaj przychód" << endl;
+    cout << "1. Dodaj przychod" << endl;
     cout << "2. Dodaj wydatek" << endl;
     cout << "3. Bilans z bie¿¹cego miesi¹ca" << endl;
     cout << "4. Bilans z porzedniego miesi¹ca" << endl;
@@ -53,25 +57,11 @@ char PersonalBudget::chooseOptionAtOperationMenu()
     cout << "7. Wyloguj sie" << endl;
     cout << "---------------------------" << endl;
     cout << "Twoj wybor: ";
-    choice = loadCharacter();
+    choice = auxiliaryMethods.loadCharacter();
 
     return choice;
 }
-char PersonalBudget::loadCharacter()
+void PersonalBudget::addIncome()
 {
-    string in = "";
-    char character  = {0};
-
-    while (true)
-    {
-        getline(cin, in);
-
-        if (in.length() == 1)
-        {
-            character = in[0];
-            break;
-        }
-        cout << "To nie jest pojedynczy znak. Wpisz ponownie." << endl;
-    }
-    return character;
+    operationManager -> addIncome();
 }
