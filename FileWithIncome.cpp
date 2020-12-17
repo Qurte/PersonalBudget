@@ -17,7 +17,6 @@ void FileWithIncome::addIncomeToFile (Income income)
         {
             xml.IntoElem();
             xml.FindChildElem("UserId");
-            cout << xml.GetChildData() << endl;
             if (atoi(xml.GetChildData().c_str()) == loggedInUser.getUserId())
             {
                 xml.IntoElem();
@@ -48,4 +47,48 @@ void FileWithIncome::addIncomeToFile (Income income)
     xml.AddElem("IncomeDay", income.getDay());
     xml.AddElem("IncomeValue", income.getIncomeValue());
     xml.Save(getNameFile());
+}
+
+vector <Income> FileWithIncome::loadIncomeFromFile()
+{
+    vector <Income> income;
+    CMarkup xml;
+    int i = 0;
+    xml.Load(getNameFile());
+    while (xml.FindChildElem("User"))
+    {
+        xml.IntoElem();
+        xml.FindChildElem("UserId");
+        if (atoi(xml.GetChildData().c_str()) == loggedInUser.getUserId())
+        {
+
+            while (xml.FindChildElem("Incomes"))
+            {
+                income.push_back(Income());
+                xml.IntoElem();
+                xml.FindChildElem("IncomeName");
+                income[i].setIncomeName(xml.GetChildData());
+                xml.FindChildElem("IncomeYear");
+                income[i].setYear(atoi(xml.GetChildData().c_str()));
+                xml.FindChildElem("IncomeMonth");
+                income[i].setMonth(atoi(xml.GetChildData().c_str()));
+                xml.FindChildElem("IncomeDay");
+                income[i].setDay(atoi(xml.GetChildData().c_str()));
+                xml.FindChildElem("IncomeValue");
+                income[i].setIncomeValue(atoi(xml.GetChildData().c_str()));
+                xml.OutOfElem();
+                i++;
+            }
+            for (int j = 0; j < income.size(); j ++)
+            {
+                cout << "Name: " << income[j].getIncomeName() << endl;
+                cout << "Year: " << income[j].getYear() << endl;
+                cout << "Month: " << income[j].getMonth() << endl;
+                cout << "Day: " << income[j].getDay() << endl;
+                cout << "Value: " <<income[j].getIncomeValue() << endl;
+            }
+            system("pause");
+            return income;
+        }
+    }
 }

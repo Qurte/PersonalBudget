@@ -17,6 +17,7 @@ class FileWithIncome : public TextFile
 public:
     FileWithIncome(string nameFileWtihIncome, User LOGGEDINUSER) : TextFile(nameFileWtihIncome), loggedInUser(LOGGEDINUSER) {};
     void addIncomeToFile (Income income);
+    vector <Income> loadIncomeFromFile();
 
 };
 #endif

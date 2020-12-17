@@ -24,7 +24,7 @@ class OperationManager
 public:
     OperationManager (string nameFileWithIncome, User LOGGEDINUSER): fileWithIncome (nameFileWithIncome, LOGGEDINUSER), loggedInUser(LOGGEDINUSER)
     {
-      //  incomes = fileWithIncome.loadIncomeFromFile();
+        incomes = fileWithIncome.loadIncomeFromFile();
     };
     void addIncome();
 
