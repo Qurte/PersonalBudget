@@ -12,5 +12,6 @@ class AuxiliaryMethods
     string loadLine();
     char loadCharacter();
     int conversionStringToInt(string integer);
+    string converionIntToString(int integer);
 };
 #endif

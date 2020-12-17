@@ -33,3 +33,10 @@ int AuxiliaryMethods::conversionStringToInt(string integer)
 
     return number;
 }
+string AuxiliaryMethods::converionIntToString(int integer)
+{
+    ostringstream ss;
+    ss << integer;
+    string str = ss.str();
+    return str;
+}
