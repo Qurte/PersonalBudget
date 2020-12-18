@@ -21,19 +21,35 @@ class OperationManager
     FileWithExpense fileWithExpense;
     vector <Income> incomes;
     vector <Expense> expenses;
+    int incomeSum;
+    int expenseSum;
+    int sum;
+
+
     bool checkCorrectnessFormat (string);
     bool checkTheTimeInterval(int, int, int);
+    void showIncomeForTheSpecifitMonth (int);
+    void showExpenseForTheSpecifitMonth (int);
 
     Income setDateToVectorIncome (string date);
     Expense setDateToVectorExpense (string date);
+    void showIncomeForTheSelectedPeriod (Income , Income);
+    void showExpenseForTheSelectedPeriod (Income , Income);
+
 public:
     OperationManager (string nameFileWithIncome, string nameFileWithExpense, User LOGGEDINUSER): fileWithIncome (nameFileWithIncome, LOGGEDINUSER), loggedInUser(LOGGEDINUSER), fileWithExpense(nameFileWithExpense, LOGGEDINUSER)
     {
         incomes = fileWithIncome.loadIncomeFromFile();
         expenses = fileWithExpense.loadExpenseFromFile();
+        sum = 0;
+        expenseSum = 0;
+        incomeSum = 0;
+
     };
     void addIncome();
     void addExpense();
-
+    void showBalanceSheetForTheCurrentMonth ();
+    void showBalanceSheetForThePreviousMonth ();
+    void showBalanceSheetForTheSelectedPeriod ();
 };
 #endif

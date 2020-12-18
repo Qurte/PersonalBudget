@@ -69,3 +69,15 @@ void PersonalBudget::addExpense()
 {
     operationManager -> addExpense();
 }
+void PersonalBudget::showBalanceSheetForTheCurrentMonth ()
+{
+    operationManager -> showBalanceSheetForTheCurrentMonth();
+}
+void PersonalBudget::showBalanceSheetForThePreviousMonth ()
+{
+    operationManager -> showBalanceSheetForThePreviousMonth ();
+}
+void PersonalBudget::showBalanceSheetForTheSelectedPeriod ()
+{
+    operationManager -> showBalanceSheetForTheSelectedPeriod();
+}

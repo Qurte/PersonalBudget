@@ -44,13 +44,13 @@ int main()
                     personalBudget.addExpense();
                 break;
             case '3':
-              //  ksiazkaAdresowa.wyszukajAdresatowPoNazwisku();
+                    personalBudget.showBalanceSheetForTheCurrentMonth();
                 break;
             case '4':
-                // ksiazkaAdresowa.wyswietlWszystkichAdresatow();
+                    personalBudget.showBalanceSheetForThePreviousMonth();
                 break;
             case '5':
-                // ksiazkaAdresowa.usunAdresata();
+                    personalBudget.showBalanceSheetForTheSelectedPeriod();
                 break;
             case '6':
                // ksiazkaAdresowa.edytujAdresata();

@@ -2,7 +2,6 @@
 
 void FileWithExpense::addExpenseToFile (Expense expense)
 {
-
     CMarkup xml;
     bool fileExists = xml.Load( getNameFile() );
     if (!fileExists)

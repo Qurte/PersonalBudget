@@ -31,5 +31,8 @@ public:
     char chooseOptionAtOperationMenu();
     void addIncome();
     void addExpense();
+    void showBalanceSheetForTheCurrentMonth ();
+    void showBalanceSheetForThePreviousMonth ();
+    void showBalanceSheetForTheSelectedPeriod ();
 };
 #endif
