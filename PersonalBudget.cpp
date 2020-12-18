@@ -14,6 +14,7 @@ void PersonalBudget::SignInUser()
     if (isTheUserSignIn() == true)
     {
         operationManager = new OperationManager (NAME_FILE_WITH_INCOME, NAME_FILE_WITH_EXPENSE, userManager.getLoggedInUser());
+        loggedInUser = userManager.getLoggedInUser();
     }
 }
 void PersonalBudget::signOutUser ()
@@ -45,6 +46,9 @@ char PersonalBudget::chooseOptionAtOperationMenu()
     char choice;
 
     system("cls");
+    cout << "Imie uzytkownika: " << loggedInUser.getName() << endl;
+    cout << "Nazwisko uzytkownika: " << loggedInUser.getSurname() << endl;
+    cout << "-----------" << endl;
     cout << " >>> MENU OPERACJI <<<" << endl;
     cout << "---------------------------" << endl;
     cout << "1. Dodaj przychod" << endl;
@@ -80,4 +84,8 @@ void PersonalBudget::showBalanceSheetForThePreviousMonth ()
 void PersonalBudget::showBalanceSheetForTheSelectedPeriod ()
 {
     operationManager -> showBalanceSheetForTheSelectedPeriod();
+}
+void PersonalBudget::changePasswordSignInUser ()
+{
+   userManager.changePasswordSignInUser();
 }

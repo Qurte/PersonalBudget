@@ -141,3 +141,20 @@ User UserManager::getLoggedInUser()
 {
     return loggedInUser;
 }
+void UserManager::changePasswordSignInUser ()
+{
+    string newPassword;
+    cout << "Podaj nowe haslo: " << endl;
+    newPassword = auxiliatyMethods.loadLine();
+    for (int i = 0; i < users.size(); i++)
+    {
+        if (users[i].getUserId () == loggedInUser.getUserId())
+        {
+            users[i].setPassword(newPassword);
+            loggedInUser.setPassword(newPassword);
+            cout << "Haslo zostalo zmienione." << endl << endl;
+            system("pause");
+        }
+    }
+    fileWithUsers.changePasswordSignInUser (loggedInUser);
+}

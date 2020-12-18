@@ -17,4 +17,14 @@
 <IncomeValue>3200</IncomeValue>
 </Incomes>
 </User>
+<User>
+<UserId>5</UserId>
+<Incomes>
+<IncomeName>praca</IncomeName>
+<IncomeYear>2020</IncomeYear>
+<IncomeMonth>12</IncomeMonth>
+<IncomeDay>18</IncomeDay>
+<IncomeValue>1000</IncomeValue>
+</Incomes>
+</User>
 </Income>

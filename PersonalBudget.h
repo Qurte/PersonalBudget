@@ -5,12 +5,14 @@
 #include "UserManager.h"
 #include "AuxiliaryMethods.h"
 #include "OperationManager.h"
+#include "User.h"
 
 using namespace std;
 
 class PersonalBudget
 {
     UserManager userManager;
+    User loggedInUser;
     OperationManager *operationManager;
     AuxiliaryMethods auxiliaryMethods;
     int IdSignInUser;
@@ -34,5 +36,6 @@ public:
     void showBalanceSheetForTheCurrentMonth ();
     void showBalanceSheetForThePreviousMonth ();
     void showBalanceSheetForTheSelectedPeriod ();
+    void changePasswordSignInUser ();
 };
 #endif

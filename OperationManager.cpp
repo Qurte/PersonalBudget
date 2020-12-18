@@ -300,9 +300,9 @@ void OperationManager::showBalanceSheetForThePreviousMonth ()
 void OperationManager::showBalanceSheetForTheSelectedPeriod ()
 {
     system("cls");
-    Income firstDate;
+    Date firstDate;
     string date = "";
-    Income secondDate;
+    Date secondDate;
     do
     {
         do
@@ -344,7 +344,7 @@ void OperationManager::showBalanceSheetForTheSelectedPeriod ()
 
 
 }
-void OperationManager::showIncomeForTheSelectedPeriod (Income firstDate, Income secondDate)
+void OperationManager::showIncomeForTheSelectedPeriod (Date firstDate, Date secondDate)
 {
     bool isItInTheRange;
     for (int i = 0; i < incomes.size(); i++)
@@ -384,7 +384,7 @@ void OperationManager::showIncomeForTheSelectedPeriod (Income firstDate, Income 
     }
     cout << "wyszedlem" << endl;
 }
-void OperationManager::showExpenseForTheSelectedPeriod (Income firstDate, Income secondDate)
+void OperationManager::showExpenseForTheSelectedPeriod (Date firstDate, Date secondDate)
 {
     cout << "wszedlem" << endl;
     bool isItInTheRange;

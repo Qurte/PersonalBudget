@@ -33,6 +33,7 @@ public:
     void signOutUser ();
     bool isTheUserSignIn();
     User getLoggedInUser();
+    void changePasswordSignInUser ();
 
 };
 #endif

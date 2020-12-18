@@ -14,6 +14,7 @@ public:
     FileWithUsers(string nameFileWtihUsers) : TextFile(nameFileWtihUsers) {};
     void addUserToFile (User user);
     vector <User> loadUsersFromFile();
+    void changePasswordSignInUser (User);
 
 };
 #endif

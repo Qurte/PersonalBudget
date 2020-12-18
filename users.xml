@@ -17,7 +17,7 @@
 <User>
 <UserId>3</UserId>
 <Login>Maka</Login>
-<Password>paka</Password>
+<Password>123</Password>
 <Name>Marek</Name>
 <Surname>korek</Surname>
 </User>
@@ -27,5 +27,12 @@
 <Password>123</Password>
 <Name>Darek</Name>
 <Surname>Mochalek</Surname>
+</User>
+<User>
+<UserId>5</UserId>
+<Login>Michalinka</Login>
+<Password>Olaf2012</Password>
+<Name>Michalina</Name>
+<Surname>Antoniewska</Surname>
 </User>
 </Users>

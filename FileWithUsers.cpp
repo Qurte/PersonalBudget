@@ -45,5 +45,27 @@ vector <User> FileWithUsers::loadUsersFromFile()
     }
 
     return users;
-
 }
+void FileWithUsers::changePasswordSignInUser (User loggedInUser)
+{
+    CMarkup xml;
+    xml.Load(getNameFile());
+    while (xml.FindChildElem("User"))
+    {
+        xml.IntoElem();
+        xml.FindChildElem("UserId");
+        if (atoi(xml.GetChildData().c_str()) == loggedInUser.getUserId())
+        {
+            xml.FindChildElem("Password");
+            xml.RemoveChildElem();
+            xml.AddChildElem("Password", loggedInUser.getPassword());
+            xml.Save(getNameFile());
+            return;
+        }
+        xml.OutOfElem();
+    }
+}
+
+
+
+

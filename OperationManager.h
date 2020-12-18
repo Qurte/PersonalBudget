@@ -8,6 +8,7 @@
 #include "FileWithIncome.h"
 #include "Expense.h"
 #include "FileWithExpense.h"
+#include "Date.h"
 
 #include <vector>
 
@@ -33,8 +34,8 @@ class OperationManager
 
     Income setDateToVectorIncome (string date);
     Expense setDateToVectorExpense (string date);
-    void showIncomeForTheSelectedPeriod (Income , Income);
-    void showExpenseForTheSelectedPeriod (Income , Income);
+    void showIncomeForTheSelectedPeriod (Date , Date);
+    void showExpenseForTheSelectedPeriod (Date , Date);
 
 public:
     OperationManager (string nameFileWithIncome, string nameFileWithExpense, User LOGGEDINUSER): fileWithIncome (nameFileWithIncome, LOGGEDINUSER), loggedInUser(LOGGEDINUSER), fileWithExpense(nameFileWithExpense, LOGGEDINUSER)

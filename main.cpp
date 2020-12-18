@@ -53,7 +53,7 @@ int main()
                     personalBudget.showBalanceSheetForTheSelectedPeriod();
                 break;
             case '6':
-               // ksiazkaAdresowa.edytujAdresata();
+                    personalBudget.changePasswordSignInUser();
                 break;
             case '7':
                     personalBudget.signOutUser();
