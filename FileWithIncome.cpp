@@ -79,16 +79,8 @@ vector <Income> FileWithIncome::loadIncomeFromFile()
                 xml.OutOfElem();
                 i++;
             }
-            for (int j = 0; j < income.size(); j ++)
-            {
-                cout << "Name: " << income[j].getIncomeName() << endl;
-                cout << "Year: " << income[j].getYear() << endl;
-                cout << "Month: " << income[j].getMonth() << endl;
-                cout << "Day: " << income[j].getDay() << endl;
-                cout << "Value: " <<income[j].getIncomeValue() << endl;
-            }
-            system("pause");
             return income;
         }
+        xml.OutOfElem();
     }
 }

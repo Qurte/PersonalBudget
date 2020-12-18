@@ -24,7 +24,7 @@ void Expense::setExpenseName(string expenseName)
 {
     this -> expenseName = expenseName;
 }
-void Expense::setExpenseValue (int expensealue)
+void Expense::setExpenseValue (int expenseValue)
 {
     this -> expenseValue = expenseValue;
 }

@@ -2,7 +2,6 @@
 
 void FileWithExpense::addExpenseToFile (Expense expense)
 {
-
     CMarkup xml;
     bool fileExists = xml.Load( getNameFile() );
     if (!fileExists)
@@ -79,18 +78,9 @@ vector <Expense> FileWithExpense::loadExpenseFromFile()
                 xml.OutOfElem();
                 i++;
             }
-            cout << "tutaj doszedlem" << endl;
-            for (int j = 0; j < expenses.size(); j ++)
-            {
-                cout << "Name: " << expenses[j].getExpenseName() << endl;
-                cout << "Year: " << expenses[j].getYear() << endl;
-                cout << "Month: " << expenses[j].getMonth() << endl;
-                cout << "Day: " << expenses[j].getDay() << endl;
-                cout << "Value: " <<expenses[j].getExpenseValue() << endl;
-            }
-            system("pause");
             return expenses;
         }
+        xml.OutOfElem();
     }
 }
 
