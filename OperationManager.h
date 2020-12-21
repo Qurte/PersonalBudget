@@ -23,9 +23,9 @@ class OperationManager
     FileWithExpense fileWithExpense;
     vector <Income> incomes;
     vector <Expense> expenses;
-    int incomeSum;
-    int expenseSum;
-    int sum;
+    float incomeSum;
+    float expenseSum;
+    float sum;
 
 
     bool checkCorrectnessFormat (string);
