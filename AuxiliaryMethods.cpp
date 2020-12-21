@@ -40,3 +40,14 @@ string AuxiliaryMethods::converionIntToString(int integer)
     string str = ss.str();
     return str;
 }
+string AuxiliaryMethods::converionFloatToString( float number )
+{
+    stringstream FloatToStr;
+    string str;
+
+    FloatToStr << number;
+    FloatToStr >> str;
+    FloatToStr.clear();
+
+    return str;
+}

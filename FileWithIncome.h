@@ -14,6 +14,7 @@ class FileWithIncome : public TextFile
 {
     AuxiliaryMethods auxiliaryMethods;
     User loggedInUser;
+
 public:
     FileWithIncome(string nameFileWtihIncome, User LOGGEDINUSER) : TextFile(nameFileWtihIncome), loggedInUser(LOGGEDINUSER) {};
     void addIncomeToFile (Income income);

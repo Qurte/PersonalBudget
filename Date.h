@@ -14,6 +14,8 @@ class Date
     bool conditionalMonth (int);
     bool conditionalDay (int);
     bool isLeapYear ();
+
+    int lastOperationIndex;
 public:
     void setYear (int);
     void setMonth (int);

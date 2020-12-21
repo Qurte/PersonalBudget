@@ -21,11 +21,12 @@ void FileWithExpense::addExpenseToFile (Expense expense)
                 xml.IntoElem();
                 xml.AddElem("Expense");
                 xml.IntoElem();
+                xml.AddElem("Index", expense.getExpenseIndex());
                 xml.AddElem("ExpenseName", expense.getExpenseName());
                 xml.AddElem("ExpenseYear", expense.getYear());
                 xml.AddElem("ExpenseMonth", expense.getMonth());
                 xml.AddElem("ExpenseDay", expense.getDay());
-                xml.AddElem("ExpenseValue", expense.getExpenseValue());
+                xml.AddElem("ExpenseValue", auxiliaryMethods.converionFloatToString(expense.getExpenseValue()));
                 xml.Save(getNameFile());
                 return;
             }
@@ -40,11 +41,12 @@ void FileWithExpense::addExpenseToFile (Expense expense)
     xml.AddElem("UserId", loggedInUser.getUserId());
     xml.AddElem("Expense");
     xml.IntoElem();
+    xml.AddElem("Index", expense.getExpenseIndex());
     xml.AddElem("ExpenseName", expense.getExpenseName());
     xml.AddElem("ExpenseYear", expense.getYear());
     xml.AddElem("ExpenseMonth", expense.getMonth());
     xml.AddElem("ExpenseDay", expense.getDay());
-    xml.AddElem("ExpenseValue", expense.getExpenseValue());
+    xml.AddElem("ExpenseValue", auxiliaryMethods.converionFloatToString(expense.getExpenseValue()));
     xml.Save(getNameFile());
 }
 
@@ -65,6 +67,8 @@ vector <Expense> FileWithExpense::loadExpenseFromFile()
             {
                 expenses.push_back(Expense());
                 xml.IntoElem();
+                xml.FindChildElem("Index");
+                expenses[i].setExpenseIndex (atoi(xml.GetChildData().c_str()));
                 xml.FindChildElem("ExpenseName");
                 expenses[i].setExpenseName(xml.GetChildData());
                 xml.FindChildElem("ExpenseYear");
@@ -74,7 +78,7 @@ vector <Expense> FileWithExpense::loadExpenseFromFile()
                 xml.FindChildElem("ExpenseDay");
                 expenses[i].setDay(atoi(xml.GetChildData().c_str()));
                 xml.FindChildElem("ExpenseValue");
-                expenses[i].setExpenseValue(atoi(xml.GetChildData().c_str()));
+                expenses[i].setExpenseValue(atof(xml.GetChildData().c_str()));
                 xml.OutOfElem();
                 i++;
             }

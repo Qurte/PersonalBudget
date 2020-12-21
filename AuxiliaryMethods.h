@@ -13,5 +13,6 @@ class AuxiliaryMethods
     char loadCharacter();
     int conversionStringToInt(string integer);
     string converionIntToString(int integer);
+    string converionFloatToString( float number );
 };
 #endif

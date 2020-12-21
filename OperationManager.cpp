@@ -40,8 +40,10 @@ void OperationManager::addIncome()
 
     cout << "Podaj wartosc przychodu: " << endl;
     incomeValue = auxiliaryMethods.loadLine();
-    income.setIncomeValue(auxiliaryMethods.conversionStringToInt(incomeValue));
+    incomeValue = replaceCommaWithPeriod(incomeValue);
+    income.setIncomeValue(atof(incomeValue.c_str()));
 
+    income.setIncomeIndex(assignIncomeIndex());
     fileWithIncome.addIncomeToFile(income);
     incomes.push_back(income);
     cout << "Przychod zostal dodany" << endl;
@@ -182,8 +184,10 @@ void OperationManager::addExpense()
 
     cout << "Podaj wartosc wydatek: " << endl;
     expenseValue = auxiliaryMethods.loadLine();
-    expense.setExpenseValue(auxiliaryMethods.conversionStringToInt(expenseValue));
+    expenseValue = replaceCommaWithPeriod(expenseValue);
+    expense.setExpenseValue(atof(expenseValue.c_str()));
 
+    expense.setExpenseIndex(assignExpenseIndex());
     fileWithExpense.addExpenseToFile(expense);
     expenses.push_back(expense);
     cout << "Wydatek zostal dodany" << endl;
@@ -360,7 +364,7 @@ void OperationManager::showIncomeForTheSelectedPeriod (Date firstDate, Date seco
                     {
                         if(incomes[i].getDay() <= secondDate.getDay())
                         {
-                            isItInTheRange = true;
+                           isItInTheRange = true;
                         }
                     }
                     else
@@ -423,4 +427,44 @@ void OperationManager::showExpenseForTheSelectedPeriod (Date firstDate, Date sec
             expenseSum += expenses[i].getExpenseValue();
         }
     }
+}
+string OperationManager::replaceCommaWithPeriod (string value)
+{
+    string newValue;
+    for (int i = 0; i < value.length(); i++)
+    {
+        if (value[i] == ',')
+        {
+            newValue += '.';
+        }
+        else
+        {
+            newValue += value[i];
+        }
+    }
+    return newValue;
+}
+int OperationManager::assignIncomeIndex ()
+{
+    int index = 0;
+    for (int i = 0; i < incomes.size(); i++)
+    {
+        if (incomes[i].getIncomeIndex() > index)
+        {
+            index = incomes[i].getIncomeIndex();
+        }
+    }
+    return index + 1;
+}
+int OperationManager::assignExpenseIndex()
+{
+    int index = 0;
+    for (int i = 0; i < expenses.size(); i++)
+    {
+        if (expenses[i].getExpenseIndex() > index)
+        {
+            index = expenses[i].getExpenseIndex();
+        }
+    }
+    return index + 1;
 }

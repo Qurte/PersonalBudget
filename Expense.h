@@ -9,13 +9,16 @@ class Expense : public Date
 {
 
     string expenseName;
-    int expenseValue;
+    float expenseValue;
+    int expenseIndex;
 
 public:
     void setExpenseName(string);
-    void setExpenseValue (int);
+    void setExpenseValue (float);
+    void setExpenseIndex (int);
 
     string getExpenseName ();
-    int getExpenseValue ();
+    float getExpenseValue ();
+    int getExpenseIndex ();
 };
 #endif

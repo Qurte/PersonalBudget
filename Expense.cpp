@@ -5,15 +5,23 @@ void Expense::setExpenseName(string expenseName)
 {
     this -> expenseName = expenseName;
 }
-void Expense::setExpenseValue (int expenseValue)
+void Expense::setExpenseValue (float expenseValue)
 {
     this -> expenseValue = expenseValue;
+}
+void Expense::setExpenseIndex (int expenseIndex)
+{
+    this -> expenseIndex = expenseIndex;
 }
 string Expense::getExpenseName ()
 {
     return expenseName;
 }
-int Expense::getExpenseValue ()
+float Expense::getExpenseValue ()
 {
     return expenseValue;
+}
+int Expense::getExpenseIndex ()
+{
+    return expenseIndex;
 }

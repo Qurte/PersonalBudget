@@ -8,14 +8,17 @@ using namespace std;
 class Income : public Date
 {
     string incomeName;
-    int incomeValue;
+    float incomeValue;
+    int incomeIndex;
 
 public:
 
     void setIncomeName(string);
-    void setIncomeValue (int);
+    void setIncomeValue (float);
+    void setIncomeIndex (int);
 
     string getIncomeName ();
-    int getIncomeValue ();
+    float getIncomeValue ();
+    int getIncomeIndex ();
 };
 #endif

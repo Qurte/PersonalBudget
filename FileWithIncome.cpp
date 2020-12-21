@@ -22,11 +22,12 @@ void FileWithIncome::addIncomeToFile (Income income)
                 xml.IntoElem();
                 xml.AddElem("Incomes");
                 xml.IntoElem();
+                xml.AddElem("Index", income.getIncomeIndex());
                 xml.AddElem("IncomeName", income.getIncomeName());
                 xml.AddElem("IncomeYear", income.getYear());
                 xml.AddElem("IncomeMonth", income.getMonth());
                 xml.AddElem("IncomeDay", income.getDay());
-                xml.AddElem("IncomeValue", income.getIncomeValue());
+                xml.AddElem("IncomeValue", auxiliaryMethods.converionFloatToString(income.getIncomeValue()));
                 xml.Save(getNameFile());
                 return;
             }
@@ -41,11 +42,12 @@ void FileWithIncome::addIncomeToFile (Income income)
     xml.AddElem("UserId", loggedInUser.getUserId());
     xml.AddElem("Incomes");
     xml.IntoElem();
+    xml.AddElem("Index", income.getIncomeIndex());
     xml.AddElem("IncomeName", income.getIncomeName());
     xml.AddElem("IncomeYear", income.getYear());
     xml.AddElem("IncomeMonth", income.getMonth());
     xml.AddElem("IncomeDay", income.getDay());
-    xml.AddElem("IncomeValue", income.getIncomeValue());
+    xml.AddElem("IncomeValue", auxiliaryMethods.converionFloatToString(income.getIncomeValue()));
     xml.Save(getNameFile());
 }
 
@@ -66,6 +68,8 @@ vector <Income> FileWithIncome::loadIncomeFromFile()
             {
                 income.push_back(Income());
                 xml.IntoElem();
+                xml.FindChildElem("Index");
+                income[i].setIncomeIndex (atoi(xml.GetChildData().c_str()));
                 xml.FindChildElem("IncomeName");
                 income[i].setIncomeName(xml.GetChildData());
                 xml.FindChildElem("IncomeYear");
@@ -75,7 +79,7 @@ vector <Income> FileWithIncome::loadIncomeFromFile()
                 xml.FindChildElem("IncomeDay");
                 income[i].setDay(atoi(xml.GetChildData().c_str()));
                 xml.FindChildElem("IncomeValue");
-                income[i].setIncomeValue(atoi(xml.GetChildData().c_str()));
+                income[i].setIncomeValue(atof(xml.GetChildData().c_str()));
                 xml.OutOfElem();
                 i++;
             }
